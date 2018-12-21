@@ -9,14 +9,19 @@ $(document).ready(function(){
     permCount = JSON.parse(ctr) + 1;
   }
 
-  var generateTable = function(){
+  var addZeroes = (num) => {
+     return num.toLocaleString("en", {useGrouping: false, minimumFractionDigits: 2})
+  }
+
+
+  var generateTable = () =>{
     $('#list-items').html('');
     for(var i = 0; i < localStorage.length; i++){
       var key = localStorage.key(`${i}`);
       var data = JSON.parse(localStorage[key]);
       var eDate = data[0];
       var eCat = data[1];
-      var eAmt = data[2];
+      var eAmt = (parseFloat(data[2]) < 1) ? data[2] : addZeroes(parseFloat(data[2]));
       var eID = data[3];
 
       $('#list-items').append(`
@@ -33,7 +38,7 @@ $(document).ready(function(){
         var localID = $(this).closest('tr').find('.idNum').text();
         localStorage.removeItem(`${localID}`);
         this.closest('tr').remove();
-        console.log('hello');
+        location.reload();
       });
 
       $('.editBtn').on('click', function(){
@@ -77,8 +82,6 @@ $(document).ready(function(){
 
 
   $('#refresh').on('click', generateTable);
-
-
 
 
 

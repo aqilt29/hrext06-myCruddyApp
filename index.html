@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>HREXT06 Cruddy App</title>
     <link rel="stylesheet" href="style.css">
     <script
@@ -8,52 +9,58 @@
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
     <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.21/c3.js"></script>
   </head>
   <body>
-    <div class='display-area'>
-      <div class='window'>
-        <table id='display-table'>
-          <thead> 
-            <tr>
-              <th>ID</th>
-              <th>Date</th>
-              <th>Category</th>
-              <th>Amount</th>
-              <th>Delete</th>
-              <th>Edit</th>
-            </tr>
-          </thead>
-          <tbody id='list-items'>          
-          </tbody>
-        </table>
+    <h1>Expense Tracker</h1>
+      <div class='display-area'>
+        <div class='window'>
+          <table id='display-table' class="pure-table">
+            <thead> 
+              <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Delete</th>
+                <th>Edit</th>
+              </tr>
+            </thead>
+            <tbody id='list-items'>          
+            </tbody>
+          </table>
+        </div>
+        <div class='window' id='chart'></div>
       </div>
-      <div class='window' id='pie-chart-area'></div>
-    </div>
-    <fieldset class="form-entry">
-      <legend>Enter Expense Information</legend>
-        <div class='entry'>
-          <label>Expense Date:<br/>
-            <input type="date" id="expense-date" required="required" /></label>
-        </div>
-        <div class='entry'>
-          <label>Category:<br/>
-            <select id='expense-cat' required="required">
-              <option value="" selected disabled>Choose here</option>
-              <option value='Rent'>Rent</option>
-              <option value='Food'>Food</option>
-              <option value='Gas'>Gas</option>
-              <option value='Car Payment'>Car Payment</option>
-              <option value='Utilities'>Utilities</option>
-              <option value='Debt'>Debt Payment</option>                                          
-            </select></label>
-        </div>
-        <div class='entry'>
-          <label>Amount:<br/>
-            <span>$</span><input type="number" id="expense-amount" min="0.01" step="0.01" required="required" /></label>
-        </div>
-
-        <button class='enterBtn'>Submit Entry</button>
-    </fieldset>
-    <button id='refresh'>Refresh</button>
+      <form class="form-entry">
+        <fieldset>
+        <legend>Enter Expense Information</legend>
+          <div class='entry'>
+            <label>Expense Date:<br/>
+              <input type="date" id="expense-date"/></label>
+          </div>
+          <div class='entry'>
+            <label>Category:<br/>
+              <select id='expense-cat' required="required">
+                <option value="" selected disabled>Choose here</option>
+                <option value='Rent'>Rent</option>
+                <option value='Food'>Food</option>
+                <option value='Gas'>Gas</option>
+                <option value='Car Payment'>Car Payment</option>
+                <option value='Utilities'>Utilities</option>
+                <option value='Debt'>Debt Payment</option>                                          
+              </select></label>
+          </div>
+          <div class='entry'>
+            <label>Amount:<br/>
+              <span>$</span><input type="number" id="expense-amount" min="0.01" step="0.01" placeholder="0.00" /></label>
+          </div>
+          <input type="reset" value="Clear">
+          <button class='enterBtn'>Submit Entry</button>
+        </fieldset>
+      </form>
+    <script src="data.js"></script>
+    <script src="chart.js"></script>
   </body>
 </html>

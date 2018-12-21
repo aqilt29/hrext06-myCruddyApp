@@ -13,10 +13,10 @@ Create Read Update Delete using localStorage with JS, HTML and CSS
     - [x] What about if we have more than one value?
     - [x] how do we add multiple values?
         - [x] maybe use an array?
-        - [ ] maybe use multiple keys? create new keyname each time
+        - [x] maybe use multiple keys? create new keyname each time
 
 - [x] Delete local storage
-    - [ ] delete button storage.removeItem()
+    - [x] delete button storage.removeItem()
     - [x] delete all storage.clear()
 - [x] Display stored value in proper div
 
@@ -27,12 +27,12 @@ Create Read Update Delete using localStorage with JS, HTML and CSS
 		- [x] amount
 		- [x] category
 		- [x] submit button
-	- [ ] pie chart to show a breakdown of expenses
-		- [ ] incorporate C3.js
+	- [x] pie chart to show a breakdown of expenses
+		- [x] incorporate C3.js
  		- [ ] for certain dates?
-		- [ ] live changes
+		- [x] live changes
 	- [x] list that shows expenses for the dates being viewed
-		- [ ] a Table element that shows
+		- [x] a Table element that shows
 			- [x] date
 			- [x] category
 			- [x] amount

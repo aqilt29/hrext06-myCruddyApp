@@ -1,0 +1,31 @@
+.form-entry {
+    max-width: max-content;
+    margin: auto;
+}
+
+.window {
+	display: inline-block;
+	width: 400px;
+	height: 400px;
+	background-color: red;
+}
+
+.entry {
+	display: inline-block;
+	margin: 10px;
+}
+
+.enterBtn {
+	margin-right: 10px;
+}
+
+.display-area {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: aqua;
+    margin: auto;
+}
+
+.right {
+	align: right;
+}

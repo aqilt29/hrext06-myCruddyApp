@@ -83,6 +83,14 @@ $(document).ready(function(){
 
   $('#refresh').on('click', generateTable);
 
+  var calcTotal = function(){
+    var sum = data.reduce((a, b) => (a + b[1]), 0);
+    sum = addZeroes(sum);
+    if(sum > 0){
+      $('#totalbox').html('Total Expenditures: $' + sum);
+    }
+
+  }();
 
 
 });

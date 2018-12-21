@@ -22,6 +22,7 @@ Create Read Update Delete using localStorage with JS, HTML and CSS
 
 ### Next Sprint (what are we trying to code)
 - [ ] Create an expense tracker
+	- [x] Display running total of expenses;
 	- [x] form input area to keep track of entries
 		- [x] date
 		- [x] amount

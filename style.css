@@ -35,7 +35,11 @@ th {
 	text-align: left;
 }
 
-h1 {
+#totalbox {
+	color: red;
+}
+
+h1, h2 {
 	text-align: center;
 }
 }
